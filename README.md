@@ -1,5 +1,17 @@
 # MichelinRacing
 
+## Init Project
+``
+    # package needed in a python 3.7 env
+    # conda create -n your-env-name python=3.7
+    # conda activate your-env-name
+    # pip install -r requirements_common.txt
+    # pip install jupyter
+    # pip install ipykernel
+    # ipython kernel install --user --name=MichelinRacing
+    # jupyter notebook
+`` 
+
 ## Partie 1
 Charge : force exercée par le véhicule sur le pneu.
 Angle de dérive : angle entre le vect vitesse et l'axe transversale du pneu.
