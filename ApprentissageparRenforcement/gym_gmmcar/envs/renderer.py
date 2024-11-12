@@ -38,17 +38,17 @@ class _Renderer(object):
             self._ax.set_xlim(-0.5, 10)
             self._ax.set_ylim(-1.5, 1.5)
         elif env_type == 'CircleEnv':
-            arc = patches.Arc((0, 0), 2, 2, 0, 0, 360, color='c', ls=':')
+            arc = patches.Arc((0, 0), 2, 2, angle=0, theta1=0, theta2=360, color='c', ls=':')
             self._ax.add_patch(arc)
         elif env_type == 'FastCircleEnv' or env_type == 'OttEnv':
             eps = 0.05
             self._ax.set_xlim(-1.5, 1.5)
             self._ax.set_ylim(-1.5, 1.5)
-            arc = patches.Arc((0, 0), 2-eps, 2-eps, 0, 0, 360, color='r', ls=':')
+            arc = patches.Arc((0, 0), 2-eps, 2-eps, angle=0, theta1=0, theta2=360, color='r', ls=':')
             self._ax.add_patch(arc)
-            arc = patches.Arc((0, 0), 2, 2, 0, 0, 360, color='c')
+            arc = patches.Arc((0, 0), 2, 2, angle=0, theta1=0, theta2=360, color='c')
             self._ax.add_patch(arc)
-            arc = patches.Arc((0, 0), 2+eps, 2+eps, 0, 0, 360, color='r', ls=':')
+            arc = patches.Arc((0, 0), 2+eps, 2+eps, angle=0, theta1=0, theta2=360, color='r', ls=':')
             self._ax.add_patch(arc)
 
         # Draw remaining simulation
@@ -75,6 +75,8 @@ class _Renderer(object):
         self._trajectory.set_ydata(self._y)
         self._draw_car(pos_x, pos_y, pos_yaw, steer)
         self._fig.canvas.draw()
+        #self._fig.canvas.draw_idle()
+        #self._fig.canvas.flush_events()
         plt.pause(0.001)
 
 
