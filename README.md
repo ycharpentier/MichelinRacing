@@ -2,14 +2,11 @@
 
 ## Init Project
 ```bash
-    # package needed in a python 3.7 env
-    conda create -n your-env-name python=3.7
-    conda activate your-env-name
-    pip install -r requirements_common.txt
-    pip install jupyter
-    pip install ipykernel
-    ipython kernel install --user --name=MichelinRacing
-    jupyter notebook
+    # package needed in a python 3.11 env
+    $ conda create -n your_env_name python=3.11
+    $ conda activate your_env_name
+    $ pip install -r requirements_common.txt
+    $ jupyter notebook # To open jupyter and navigate in the project
 ```
 
 ## Partie 1
